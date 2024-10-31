@@ -1,0 +1,41 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export const getMonthName = (month: number) => {
+  return month == 1
+    ? "Jan"
+    : month == 2
+    ? "Feb"
+    : month == 3
+    ? "Mar"
+    : month == 4
+    ? "Apr"
+    : month == 5
+    ? "May"
+    : month == 6
+    ? "Jun"
+    : month == 7
+    ? "Jul"
+    : month == 8
+    ? "Aug"
+    : month == 9
+    ? "Sep"
+    : month == 10
+    ? "Oct"
+    : month == 11
+    ? "Nov"
+    : month == 12 && "Dec";
+};
+
+export const normalizeTitle = (title: string): string => {
+  return title
+    .toLowerCase() // Convert to lowercase
+    .replace(/[^a-z0-9\s-]/g, "") // Remove special characters
+    .trim() // Trim whitespace
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/-+/g, "-"); // Replace multiple hyphens with a single hyphen
+};
