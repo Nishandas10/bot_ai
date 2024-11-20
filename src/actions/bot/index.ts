@@ -198,11 +198,13 @@ export const onAiChatBotAssistant = async (
             chatRoom: checkCustomer.customer[0].chatRoom[0].id,
           };
         }
-        await onStoreConversations(
-          checkCustomer?.customer[0].chatRoom[0].id!,
-          message,
-          author
-        );
+        if (checkCustomer?.customer[0]?.chatRoom[0]?.id) {
+          await onStoreConversations(
+            checkCustomer.customer[0].chatRoom[0].id,
+            message,
+            author
+          );
+        }
 
         const chatCompletion = await openai.chat.completions.create({
           messages: [
