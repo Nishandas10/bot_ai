@@ -67,3 +67,6 @@ export const getMonthName = (month: number) => {
     ? "Nov"
     : month == 12 && "Dec";
 };
+export const normalizeTitle = () => {
+  return null;
+};
