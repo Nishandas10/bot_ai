@@ -28,5 +28,3 @@ const DomainSettingsPage = async ({ params }: Props) => {
 }
 
 export default DomainSettingsPage
-
-// 4:54:30
