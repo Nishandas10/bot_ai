@@ -162,10 +162,10 @@ export const onAiChatBotAssistant = async (
             author
           );
 
-          onRealTimeChat(
+          await onRealTimeChat(
             checkCustomer.customer[0].chatRoom[0].id,
             message,
-            "user",
+            checkCustomer.customer[0].chatRoom[0].id,
             author
           );
 
