@@ -6,7 +6,7 @@ import { clerkClient } from "@clerk/nextjs";
 import { onMailer } from "../mailer";
 import OpenAi from "openai";
 
-// import { onRealTimeChat } from "../conversation";
+import { onRealTimeChat } from "../conversation";
 
 const openai = new OpenAi({
   apiKey: process.env.OPEN_AI_KEY,
@@ -162,13 +162,12 @@ export const onAiChatBotAssistant = async (
             author
           );
 
-          //   WIP: Setup realtime mode
-          //   onRealTimeChat(
-          //     checkCustomer.customer[0].chatRoom[0].id,
-          //     message,
-          //     "user",
-          //     author
-          //   );
+          onRealTimeChat(
+            checkCustomer.customer[0].chatRoom[0].id,
+            message,
+            "user",
+            author
+          );
 
           if (!checkCustomer.customer[0].chatRoom[0].mailed) {
             const user = await clerkClient.users.getUser(

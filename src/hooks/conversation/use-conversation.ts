@@ -9,7 +9,7 @@ import {
   onViewUnReadMessages,
 } from "@/actions/conversation";
 import { useChatContext } from "@/context/user-chat-context";
-import { getMonthName } from "@/lib/utils";
+import { getMonthName, pusherClient } from "@/lib/utils";
 import {
   ChatBotMessageSchema,
   ConversationSearchSchema,
@@ -138,19 +138,19 @@ export const useChatWindow = () => {
     onScrollToBottom();
   }, [chats, messageWindowRef]);
 
-  // useEffect(() => {
-  //   if (chatRoom) {
-  //     pusherClient.subscribe(chatRoom);
-  //     pusherClient.bind("realtime-mode", (data: any) => {
-  //       setChats((prev) => [...prev, data.chat]);
-  //     });
+  useEffect(() => {
+    if (chatRoom) {
+      pusherClient.subscribe(chatRoom);
+      pusherClient.bind("realtime-mode", (data: any) => {
+        setChats((prev) => [...prev, data.chat]);
+      });
 
-  //     return () => {
-  //       pusherClient.unbind("realtime-mode");
-  //       pusherClient.unsubscribe(chatRoom);
-  //     };
-  //   }
-  // }, [chatRoom]);
+      return () => {
+        pusherClient.unbind("realtime-mode");
+        pusherClient.unsubscribe(chatRoom);
+      };
+    }
+  }, [chatRoom]);
 
   const onHandleSentMessage = handleSubmit(async (values) => {
     try {
@@ -163,14 +163,14 @@ export const useChatWindow = () => {
       //WIP: Remove this line
       if (message) {
         //remove this
-        setChats((prev) => [...prev, message.message[0]]);
+        // setChats((prev) => [...prev, message.message[0]]);
 
-        // await onRealTimeChat(
-        //   chatRoom!,
-        //   message.message[0].message,
-        //   message.message[0].id,
-        //   "assistant"
-        // );
+        await onRealTimeChat(
+          chatRoom!,
+          message.message[0].message,
+          message.message[0].id,
+          "assistant"
+        );
       }
     } catch (error) {
       console.log(error);
