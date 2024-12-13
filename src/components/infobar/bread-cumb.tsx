@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client'
 import useSideBar from '@/context/use-sidebar'
 import React from 'react'
