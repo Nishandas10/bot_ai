@@ -12,6 +12,9 @@ const nextConfig = {
                 hostname: 'saasblog.local'
             }
         ]
+    },
+    experimental: {
+        serverComponentsExternalPackages: ['@prisma/client', 'prisma']
     }
 };
 
