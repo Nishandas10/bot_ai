@@ -15,6 +15,10 @@ export const useSignInForm = () => {
   const methods = useForm<UserLoginProps>({
     resolver: zodResolver(UserLoginSchema),
     mode: "onChange",
+    defaultValues: {
+      email: "nishancodes@gmail.com",
+      password: "Nishant100",
+    },
   });
   const onHandleSubmit = methods.handleSubmit(
     async (values: UserLoginProps) => {

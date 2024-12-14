@@ -8,7 +8,7 @@ import { ThemeProvider } from '@/context/theme-provider'
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'NishantApps',
+  title: 'Nalla AI',
   description: 'Nalla Labs',
 }
 

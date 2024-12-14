@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { onLoginUser } from '@/actions/auth'
 import SideBar from '@/components/sidebar'
 import { ChatProvider } from '@/context/user-chat-context'
@@ -13,12 +12,12 @@ const OwnerLayout = async({children}: Props) => {
   if(!authenticated) return null
   return (
     <ChatProvider>
-      <div className='flex h-screen w-full'>
-      <SideBar domains={authenticated.domain} />
-      <div className="w-full h-screen flex flex-col pl-20 md:pl-4">
-          {children}
+        <div className='flex h-screen w-full'>
+          <SideBar domains={authenticated.domain} />
+          <div className="w-full h-screen flex flex-col pl-20 md:pl-4">
+            {children}
+          </div>
         </div>
-      </div>
     </ChatProvider>
   )
 }

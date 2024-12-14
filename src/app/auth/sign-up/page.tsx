@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-empty-object-type */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import ButtonHandler from '@/components/forms/sign-up/button-handler';
 import SignUpFormProvider from '@/components/forms/sign-up/form-provider';
 import HighLightBar from '@/components/forms/sign-up/highlight-bar';

@@ -17,6 +17,7 @@ import Link from 'next/link'
 import parse from 'html-react-parser'
 import { getMonthName } from '@/lib/utils'
 import { normalizeTitle } from '@/lib/utils'; // Import the normalize function
+import Script from 'next/script'; // Import the Script component
 
 export default async function Home() {
   const posts:
@@ -38,27 +39,25 @@ export default async function Home() {
           <span className="text-orange bg-orange/20 px-4 py-2 rounded-full text-sm">
             An AI powered sales assistant chatbot
           </span>
-          <Image
-            src="/images/corinna-ai-logo.png"
-            width={500}
-            height={100}
-            alt="Logo"
-            className="max-w-lg object-contain"
-          />
+          <div>
+            <h1 className="text-9xl font-bold">NallaAI</h1>
+          </div>
           <p className="text-center max-w-[500px]">
-            Your AI powered sales assistant! Embed Corinna AI into any website
+            Your AI powered sales assistant! Embed Nalla AI into any website
             with just a snippet of code!
           </p>
           <Button className="bg-orange font-bold text-white px-4">
             Start For Free
           </Button>
-          <Image
-            src="/images/iphonecorinna.png"
-            width={400}
-            height={100}
-            alt="Logo"
-            className="max-w-lg object-contain"
-          />
+          <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSdXfnsSdK4NgDRwJQSOMALYgW07AVXqS0vho-UNGuwRYI9sQg/viewform?embedded=true" 
+        width="640" 
+        height="600" 
+        frameBorder="0" 
+        style={{ overflow: 'hidden' }} 
+      >
+        Loading…
+      </iframe>
         </div>
       </section>
       <section className="flex justify-center items-center flex-col gap-4 mt-10">
