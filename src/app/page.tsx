@@ -40,24 +40,28 @@ export default async function Home() {
             An AI powered sales assistant chatbot
           </span>
           <div>
-            <h1 className="text-9xl font-bold">NallaAI</h1>
+            <h1 className="text-8xl font-bold">NallaAI</h1>
           </div>
           <p className="text-center max-w-[500px]">
             Your AI powered sales assistant! Embed Nalla AI into any website
             with just a snippet of code!
           </p>
-          <Button className="bg-orange font-bold text-white px-4">
-            Start For Free
-          </Button>
-          <iframe 
-        src="https://docs.google.com/forms/d/e/1FAIpQLSdXfnsSdK4NgDRwJQSOMALYgW07AVXqS0vho-UNGuwRYI9sQg/viewform?embedded=true" 
-        width="640" 
-        height="600" 
-        frameBorder="0" 
-        style={{ overflow: 'hidden' }} 
-      >
-        Loading…
-      </iframe>
+          <Link href="/auth/sign-in">
+            <Button className="bg-orange font-bold text-white px-4">
+              Start For Free
+            </Button>
+          </Link>
+          <div className="w-full overflow-hidden">
+            <iframe 
+              src="https://docs.google.com/forms/d/e/1FAIpQLSdXfnsSdK4NgDRwJQSOMALYgW07AVXqS0vho-UNGuwRYI9sQg/viewform?embedded=true" 
+              width="100%" 
+              height="650" 
+              frameBorder="0" 
+              style={{ overflow: 'hidden' }} 
+            >
+              Loading…
+            </iframe>
+          </div>
         </div>
       </section>
       <section className="flex justify-center items-center flex-col gap-4 mt-10">

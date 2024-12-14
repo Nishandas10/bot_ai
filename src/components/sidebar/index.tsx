@@ -19,13 +19,6 @@ type Props = {
 const SideBar = ({ domains }: Props) => {
   const { expand, onExpand, page, onSignOut } = useSideBar()
 
-  // Set the default state to true for maximized menu
-  React.useEffect(() => {
-    if (expand === undefined) {
-      onExpand();
-    }
-  }, [expand, onExpand]);
-
   return (
     <div
       className={cn(

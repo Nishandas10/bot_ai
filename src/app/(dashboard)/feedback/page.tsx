@@ -6,7 +6,7 @@ const FeedbackPage = () => {
       <iframe 
         src="https://docs.google.com/forms/d/e/1FAIpQLSdXfnsSdK4NgDRwJQSOMALYgW07AVXqS0vho-UNGuwRYI9sQg/viewform?embedded=true" 
         width="640" 
-        height="600" 
+        height="650" 
         frameBorder="0" 
         style={{ overflow: 'hidden' }} 
       >

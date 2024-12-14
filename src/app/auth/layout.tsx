@@ -27,7 +27,9 @@ const Layout = async ({ children }: Props) => {
             height={0}
           /> */}
           <div className="text-2xl font-bold">
-            Nalla AI
+            <a href="/" className="text-inherit">
+              Nalla AI
+            </a>
           </div>
           {children}
         </div>
