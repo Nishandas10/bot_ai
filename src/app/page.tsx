@@ -46,11 +46,6 @@ export default async function Home() {
             Your AI powered sales assistant! Embed Nalla AI into any website
             with just a snippet of code!
           </p>
-          <Link href="/auth/sign-in">
-            <Button className="bg-orange font-bold text-white px-4">
-              Start For Free
-            </Button>
-          </Link>
           <div className="w-full overflow-hidden">
             <iframe 
               src="https://docs.google.com/forms/d/e/1FAIpQLSdXfnsSdK4NgDRwJQSOMALYgW07AVXqS0vho-UNGuwRYI9sQg/viewform?embedded=true" 
