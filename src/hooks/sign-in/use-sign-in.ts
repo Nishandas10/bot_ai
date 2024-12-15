@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useToast } from "@/hooks/use-toast";
 import { UserLoginProps, UserLoginSchema } from "@/schemas/auth.schema";
-import { useSignIn } from "@clerk/nextjs";
+import { useSignIn, useUser } from "@clerk/nextjs";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 
 export const useSignInForm = () => {
   const { isLoaded, setActive, signIn } = useSignIn();
+  const { isSignedIn } = useUser();
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -25,6 +26,17 @@ export const useSignInForm = () => {
 
   const onHandleSubmit = methods.handleSubmit(
     async (values: UserLoginProps) => {
+      // If user is already authenticated, directly redirect to dashboard.
+      if (isSignedIn) {
+        const currentQueryString = searchParams.toString();
+        const redirectUrl = currentQueryString
+          ? `/dashboard?${currentQueryString}`
+          : "/dashboard";
+
+        router.push(redirectUrl);
+        return;
+      }
+
       if (!isLoaded) return;
 
       try {
